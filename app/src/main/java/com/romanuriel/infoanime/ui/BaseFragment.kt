@@ -10,10 +10,12 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.lifecycleScope
 
 abstract class BaseFragment<B: ViewDataBinding, V: ViewModel>(private val layout: Int):Fragment(), IBaseView {
     lateinit var binding: B
     abstract val viewModel: V
+    val lScope = lifecycleScope
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setMenuVisibility(true)

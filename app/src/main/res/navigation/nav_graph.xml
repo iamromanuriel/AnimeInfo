@@ -2,10 +2,18 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/detailAnimeFragment">
+    app:startDestination="@id/listAnimeFragment">
 
     <fragment
         android:id="@+id/detailAnimeFragment"
         android:name="com.romanuriel.infoanime.ui.detailanime.DetailAnimeFragment"
         android:label="DetailAnimeFragment" />
+    <fragment
+        android:id="@+id/listAnimeFragment"
+        android:name="com.romanuriel.infoanime.ui.listanime.ListAnimeFragment"
+        android:label="ListAnimeFragment" >
+        <action
+            android:id="@+id/action_listAnimeFragment_to_detailAnimeFragment"
+            app:destination="@id/detailAnimeFragment" />
+    </fragment>
 </navigation>
